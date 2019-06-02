@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>/Users/bobochiu/Documents/Gridea/output</id>
-    <title>Gridea</title>
-    <updated>2019-06-02T12:43:39.338Z</updated>
+    <id>https://hangj.github.io</id>
+    <title>明天有风吹</title>
+    <updated>2019-06-02T13:39:36.267Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="/Users/bobochiu/Documents/Gridea/output"/>
-    <link rel="self" href="/Users/bobochiu/Documents/Gridea/output/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
-    <logo>/Users/bobochiu/Documents/Gridea/output/images/avatar.png</logo>
-    <icon>/Users/bobochiu/Documents/Gridea/output/favicon.ico</icon>
-    <rights>All rights reserved 2019, Gridea</rights>
+    <link rel="alternate" href="https://hangj.github.io"/>
+    <link rel="self" href="https://hangj.github.io/atom.xml"/>
+    <subtitle>Inner Peace</subtitle>
+    <logo>https://hangj.github.io/images/avatar.png</logo>
+    <icon>https://hangj.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2019, 明天有风吹</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>/Users/bobochiu/Documents/Gridea/output/post/hello-gridea/index.html</id>
-        <link href="/Users/bobochiu/Documents/Gridea/output/post/hello-gridea/index.html">
+        <id>https://hangj.github.io/post/hello-gridea</id>
+        <link href="https://hangj.github.io/post/hello-gridea">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
