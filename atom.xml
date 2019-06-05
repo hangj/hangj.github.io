@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://youran.de</id>
     <title>明天有风吹</title>
-    <updated>2019-06-05T14:01:08.483Z</updated>
+    <updated>2019-06-05T16:33:59.399Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://youran.de"/>
     <link rel="self" href="https://youran.de/atom.xml"/>
@@ -16,7 +16,10 @@
         <link href="https://youran.de/post/wei-xin-xiao-you-xi-threejs-ui-2d-text-jian-dan-fang-an">
         </link>
         <updated>2019-06-03T15:52:52.000Z</updated>
+        <summary type="html"><![CDATA[<p>在微信小游戏中使用 THREE.js 引擎，没有合适的 UI 库可用，只能自己动手。图片啥的都还好，text 不好弄。text 要计算 width 和 height，不然事件响应范围不对。</p>
+]]></summary>
         <content type="html"><![CDATA[<p>在微信小游戏中使用 THREE.js 引擎，没有合适的 UI 库可用，只能自己动手。图片啥的都还好，text 不好弄。text 要计算 width 和 height，不然事件响应范围不对。</p>
+<!-- more -->
 <pre><code>function draw(canvas, params){
   let ctx = canvas.getContext('2d')
 
@@ -46,12 +49,12 @@
 
 </code></pre>
 <p>坑:
-game.json 中如果设置 deviceOrientation 为 &quot;deviceOrientation&quot;: &quot;landscape&quot;，UI 显示很可能会不正常。而如果时 portrait 模式，就不会有问题。
-原因：
-我原来的代码中只在代码加载时取了一次 window.innerWidth 和 window.innerHeight (或 wx.getSystemInfoSync().width ), 然后保存下这两个值，供以后的代码直接读取。导致这两个值可能是设备竖屏时的参数，然而用 wx.onDeviceOrientationChange 监听横竖屏切换事件却监听不到啥。
-解决：
-每次需要这两个参数时，重新读取。</p>
-<p>微信小游戏示例代码：<a href="https://github.com/hangj/wechat_minigame_threejs_ui">wechat_minigame_threejs_ui</a></p>
+game.json 中如果设置 deviceOrientation 为 &quot;deviceOrientation&quot;: &quot;landscape&quot;，UI 显示很可能会不正常。而如果时 portrait 模式，就不会有问题。</p>
+<p>原因：</p>
+<p>我原来的代码中只在代码加载时取了一次 window.innerWidth 和 window.innerHeight (或 wx.getSystemInfoSync().width ), 然后保存下这两个值，供以后的代码直接读取。导致这两个值可能是设备竖屏时的参数，然而用 wx.onDeviceOrientationChange 监听横竖屏切换事件却并没有卵用。</p>
+<p>解决：</p>
+<p>每次需要这两个参数时，重新读取。</p>
+<p>微信小游戏示例代码：<a href="https://github.com/hangj/wechat_minigame_threejs_ui">wechat_minigame_threejs_ui</a>纯徒手编写</p>
 ]]></content>
     </entry>
     <entry>
