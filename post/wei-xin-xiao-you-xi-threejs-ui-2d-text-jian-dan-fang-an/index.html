@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://youran.de/favicon.ico?v=1560161990957">
+<link rel="shortcut icon" href="https://youran.de/favicon.ico?v=1560234447161">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://youran.de/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://youran.de">
-        <img src="https://youran.de/images/avatar.png?v=1560161990957" class="site-logo">
+        <img src="https://youran.de/images/avatar.png?v=1560234447161" class="site-logo">
         <h1 class="site-title">明天有风吹</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -113,7 +113,6 @@
   canvas.width = Math.max(2, ctx.measureText(params.str).width * ratio)
   canvas.height = Math.ceil((parseFloat(params.font) + 4)  * ratio) // 手机上可以正常显示
 
-  ctx.restore() // 还原画布状态
   ctx.save() // 保存画布状态
   ctx.clearRect(0, 0, canvas.width, canvas.height) // 清除画布
   ctx.scale(ratio, ratio) // 缩放到像素比，使之高清
@@ -130,15 +129,11 @@
   ctx.textAlign = params.textAlign
   ctx.textBaseline = params.textBaseline || 'top'
   ctx.fillText(params.str, 0, 0)
+	
+	  ctx.restore() // 还原画布状态
 }
 
 </code></pre>
-<p>坑:
-game.json 中如果设置 deviceOrientation 为 &quot;deviceOrientation&quot;: &quot;landscape&quot;，UI 显示很可能会不正常。而如果是 portrait 模式，就不会有问题。</p>
-<p>原因：</p>
-<p>我原来的代码中只在代码加载时取了一次 window.innerWidth 和 window.innerHeight (或 wx.getSystemInfoSync().width ), 然后保存下这两个值，供以后的代码直接读取。导致这两个值可能是设备竖屏时的参数，然而用 wx.onDeviceOrientationChange 监听横竖屏切换事件却并没有卵用。</p>
-<p>解决：</p>
-<p>每次需要这两个参数时，重新读取。</p>
 <p>徒手编写微信小游戏示例代码：<a href="https://github.com/hangj/wechat_minigame_threejs_ui">wechat_minigame_threejs_ui</a></p>
 
             </div>
